@@ -10,14 +10,13 @@ Artifacts: Memory Dump
 Flags: 3 (staged)
 
 
----
+
 
 ## Scenario Overview
 
 A client reported unauthorized system access, unexplained file activity, and repeated crashes of a trusted application. File names appeared encoded, and recovery of accessed artifacts was required using only volatile memory.
 
 
----
 
 ## Investigation Objectives
 
@@ -31,11 +30,11 @@ Understand attacker persistence and obfuscation techniques
 
 
 
----
+
 
 ## Methodology & Analysis
 
-1️. Baseline System Profiling
+### 1️. Baseline System Profiling
 
 Verified OS version and architecture
 
@@ -45,9 +44,9 @@ Identified anomalous behavior (crashing executable impersonation)
 
 
 
----
 
-2️. Memory-wide Triage (Entropy Reduction)
+
+### 2️. Memory-wide Triage (Entropy Reduction)
 
 Performed global string extraction
 
@@ -59,9 +58,9 @@ Decoded data revealed the first-stage artifact
  Lesson: Not all attacker artifacts are deeply hidden — some rely on analyst overconfidence.
 
 
----
 
-3️. Impostor Binary Analysis (Static RE)
+
+### 3️. Impostor Binary Analysis (Static RE)
 
 Located malicious NOTEPAD.EXE impostor
 
@@ -73,9 +72,9 @@ Flag data discovered encoded vertically, evading simple string extraction
  Lesson: Malware authors often evade automation by abusing layout, not logic.
 
 
----
 
-4️. Staged Artifact Recovery
+
+### 4️. Staged Artifact Recovery
 
 First-stage output used as credential material
 
@@ -87,7 +86,7 @@ Final stage recovered via correct dependency order
  Lesson: Flag chaining mirrors real-world kill-chain logic.
 
 
----
+
 
 ## AI Integration (Analyst-in-the-Loop)
 
@@ -104,7 +103,7 @@ No decisions were delegated to AI.
 AI functioned strictly as an execution and reasoning assistant.
 
 
----
+
 
 ## Key Takeaways
 
@@ -118,7 +117,7 @@ AI is most effective when paired with human oversight
 
 
 
----
+
 
 ## Tools Used
 
@@ -132,7 +131,7 @@ AI-assisted CLI (supervised)
 
 
 
----
+
 
 ## Status
 
@@ -140,4 +139,3 @@ AI-assisted CLI (supervised)
 ➡️ Proceeding to MemLabs Lab 6
 
 
----
